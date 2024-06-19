@@ -10,7 +10,8 @@ $passarray = [
 $passwordL = $_GET['passwordL'];
 
 
-if ($_GET['passwordL']) {
+function gen($passarray, $passwordL)
+{
     for ($i = 0; $i < $passwordL; $i++) {
 
         $randnamber = rand(0, 3);
@@ -31,6 +32,7 @@ if ($_GET['passwordL']) {
     }
 }
 
+gen($passarray, $passwordL);
 
 
 
