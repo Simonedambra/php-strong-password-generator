@@ -10,29 +10,83 @@ $passarray = [
 $passwordL = $_GET['passwordL'];
 
 
+
 function gen($passarray, $passwordL)
 {
-    for ($i = 0; $i < $passwordL; $i++) {
+    $checkL = 1;
+    $checkN = 2;
+    $checkC = 3;
+    $checkM = 4;
+    if ($_GET['numeri'] || $_GET['lettere'] || $_GET['caratteri'] || $_GET['maiuscole']) {
+        if ($_GET['lettere']) {
+            $checkL = intval($_GET['lettere']);
+        } else {
+            $checkL = 10;
+        }
+
+        if ($_GET['caratteri']) {
+            $checkC = intval($_GET['caratteri']);
+        } else {
+            $checkC = 10;
+        }
+
+        if ($_GET['numeri']) {
+            $checkN = intval($_GET['numeri']);
+        } else {
+            $checkN = 10;
+        }
+        if ($_GET['maiuscole']) {
+            $checkM = intval($_GET['maiuscole']);
+        } else {
+            $checkM = 10;
+        }
+    }
+
+    $i = 0;
+    while ($i < $passwordL) {
 
         $randnamber = rand(0, 3);
-        $arrayn = $passarray[$randnamber];
-        if ($randnamber === 0) {
-            $randomnum = rand(0, 9);
-            echo $arrayn[$randomnum];
-        } elseif ($randnamber === 1) {
-            $randomnum = rand(0, 25);
-            echo $arrayn[$randomnum];
-        } elseif ($randnamber === 2) {
-            $randomnum = rand(0, 6);
-            echo $arrayn[$randomnum];
-        } elseif ($randnamber === 3) {
-            $randomnum = rand(0, 25);
-            echo $arrayn[$randomnum];
+
+        $arraynum = [];
+        if ($checkN === 2) {
+            if ($randnamber === 0) {
+                $arrayn = $passarray[$randnamber];
+                $randomnum = rand(0, 9);
+                $arraynum = $arrayn[$randomnum];
+                $i++;
+            }
+        }
+        if ($checkL === 1) {
+            if ($randnamber === 1) {
+                $arrayn = $passarray[$randnamber];
+                $randomnum = rand(0, 25);
+                $arraynum =  $arrayn[$randomnum];
+                $i++;
+            }
+        }
+        if ($checkC === 3) {
+            if ($randnamber === 2) {
+                $arrayn = $passarray[$randnamber];
+                $randomnum = rand(0, 6);
+                $arraynum = $arrayn[$randomnum];
+                $i++;
+            }
+        }
+        if ($checkM === 4) {
+            if ($randnamber === 3) {
+                $arrayn = $passarray[$randnamber];
+                $randomnum = rand(0, 25);
+                $arraynum = $arrayn[$randomnum];
+                $i++;
+            }
+        }
+        if ($arraynum) {
+            echo $arraynum;
         }
     }
 }
 
-gen($passarray, $passwordL);
+
 
 
 
