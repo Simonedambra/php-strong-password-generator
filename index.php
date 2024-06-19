@@ -27,9 +27,9 @@ include __DIR__ . '/gen.php';
 
         <div class="container-fluid d-flex bg-body-secondary pb-5 pt-5">
             <div class="container d-flex bg-primary pb-5 pt-5 justify-content-between align-items-center rounded-2">
-                <div>
+                <div class=" bg-dark-subtle py-3 px-1 rounded-3 d-flex flex-column align-items-center">
                     <h5>INSERISCI LA LUNGHEZZA DESIDERATA</h5>
-                    <input name="passwordL" type="number" placeholder="<?php echo $passwordL; ?>" class=" mx-5 rounded-2">
+                    <input name="passwordL" type="number" placeholder="<?php echo $passwordL; ?>" class=" w-25 mx-5 rounded-2">
                 </div>
                 <div class="container d-flex flex-column w-50 justify-content-center align-items-center bg-body-secondary p-5 rounded-3">
                     <h1>
@@ -43,7 +43,7 @@ include __DIR__ . '/gen.php';
                         <?php endif; ?>
                     </H5>
                 </div>
-                <div>
+                <div class="p-3 bg-body-secondary rounded-3">
                     <button class="btn btn-light mx-5 rounded-2">genera password</button>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="1" name="lettere" <?php if ($_GET['lettere']) : ?> checked <?php endif; ?> id="flexCheckDefault">
