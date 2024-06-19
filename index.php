@@ -29,7 +29,7 @@ include __DIR__ . '/gen.php';
             <div class="container d-flex bg-primary pb-5 pt-5 justify-content-between align-items-center rounded-2">
                 <div>
                     <h5>INSERISCI LA LUNGHEZZA DESIDERATA</h5>
-                    <input name="passwordL" type="number" class=" mx-5 rounded-2">
+                    <input name="passwordL" type="number" placeholder="<?php echo $passwordL; ?>" class=" mx-5 rounded-2">
                 </div>
                 <div class="container d-flex flex-column w-50 justify-content-center align-items-center bg-body-secondary p-5 rounded-3">
                     <h1>
