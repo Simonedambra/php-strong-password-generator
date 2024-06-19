@@ -27,7 +27,10 @@ include __DIR__ . '/gen.php';
 
         <div class="container-fluid d-flex bg-body-secondary pb-5 pt-5">
             <div class="container d-flex bg-primary pb-5 pt-5 justify-content-between align-items-center rounded-2">
-                <input name="passwordL" type="number" class=" mx-5 rounded-2">
+                <div>
+                    <h5>INSERISCI LA LUNGHEZZA DESIDERATA</h5>
+                    <input name="passwordL" type="number" class=" mx-5 rounded-2">
+                </div>
                 <div class="container d-flex flex-column w-50 justify-content-center align-items-center bg-body-secondary p-5 rounded-3">
                     <h1>
                         PASSWORD GENERATA
@@ -36,7 +39,7 @@ include __DIR__ . '/gen.php';
                         <?php if ($_GET['passwordL']) : ?>
                             <?php gen($passarray, $passwordL) ?>
                         <?php else : ?>
-                            NON HAI ANCORA GENERATO ALCUNA PASSWORD
+                            NON HAI ANCORA SELEZIONATO ALCUNA LUNGHEZZA
                         <?php endif; ?>
                     </H5>
                 </div>
